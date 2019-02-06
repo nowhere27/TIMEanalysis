@@ -8,8 +8,8 @@ Given the virtual slide images of CD3 and CD8 immunohistochemical stains, this p
 Once you annotate the tumor area manually, it segments the area into 1000 x 1000-pixel tiles. This enables you to assess not only the overall density of TIL and stroma, but also their mean, minimum, median, maximum and variance over the tiles. 
 
 
-#[Thing to prepare]
-##1. Computer (of course)
+# [Thing to prepare]
+## 1. Computer (of course)
  This protocol has been tested on the machines with the following specification: 
 Windows 10, AMD Ryzen 7 1700 3.00 GHz (RAM 32GB)
 Windows 7, Intel i7-4790 3.60 GHz (RAM 32GB)
@@ -18,7 +18,7 @@ Ubuntu 14.04 LTS, Intel Xeon 3.40 GHz (RAM 32GB)
 To summerize, no supercomputer needed. I have to nothing to say about Mac machines since I have never used them. 
 
 
-##2. Software 
+## 2. Software 
 - Python 2.7 (NOT 3.X) 
 - R 
 - QuPath (https://qupath.github.io/)
@@ -27,7 +27,8 @@ To summerize, no supercomputer needed. I have to nothing to say about Mac machin
  As a window user, I used Anaconda (https://www.anaconda.com/download/) because I needed numpy.. you might try other options here (https://scipy.org/install.html) 
 
 
-##3. Your own virtual slides 
+## 3. Your own virtual slides 
  For each patient case, a representative tumor block was selected, immunohistochemistry of CD3 and CD8 was performed and the slides were scanned by Aperio AT2 slide scanner at 20x magnification. Why not 40x? just storage issues. I've also tried some images scanned at 40x manification but had no problem. 
  
  
+For a more detailed protocol, please check >> 
