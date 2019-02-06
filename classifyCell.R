@@ -2,14 +2,15 @@ library(readr)
 library(caret)
 
 # Variavles
-super <- 'G:/SNUBH/data/'
+super <- _REPLACE_DIR_
+projName = _REPLACE_PROJECT_DIR_
 cellDir <- paste(super, 'Cell_forFilter/',sep='')
 resDir <- paste(super, 'Cell_filtered_data/',sep='')
 
 # Load the model
 start <- Sys.time()
-CD3_model <- readRDS("G:/Cell_classifier/classifier_CD3.rds")
-CD8_model <- readRDS("G:/Cell_classifier/classifier_CD8.rds")
+CD3_model <- readRDS(paste(projName,"Scripts/","classifier_CD3.rds",sep=""))
+CD8_model <- readRDS(paste(projName,"Scripts/","classifier_CD8.rds",sep=""))
 
 # Do the classification
 metric <- data.frame(filename=character(),
