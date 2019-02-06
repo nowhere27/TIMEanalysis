@@ -9,7 +9,9 @@ projDir = '"'+outDirRoot+'/Project/'+'"'
 
 fList = os.listdir(inDir)
 for f in fList:
-    if('.rds' not in f):
+    if('.rds' in f):
+        os.rename(outDirRoot+"/code/"+f,outDir+f)
+    elif('classifiers' not in f):
         if(f!='0.py'):
             file = open(inDir+"\\"+f)
             line = file.readlines()
@@ -24,3 +26,4 @@ for f in fList:
                     outFile.write(l)
 
             outFile.close()
+
