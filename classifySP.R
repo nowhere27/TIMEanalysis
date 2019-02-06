@@ -2,13 +2,14 @@ library(readr)
 library(caret)
 
 # Variavles
-super <- 'G:/SNUBH/data/'
+super <- _REPLACE_DIR_
+projName = _REPLACE_PROJECT_DIR_
 cellDir <- paste(super, 'SP_forFilter/',sep='')
 resDir <- paste(super, 'SP_filtered_data/',sep='')
 
 # Load the model
 start <- Sys.time()
-model <- readRDS("G:/Superpixel_classifier/twoClasses/classifier.rds")
+model <- readRDS(paste(projName,"Scripts/","classifier.rds",sep=""))
 
 # Do the classification
 metric <- data.frame(filename=character(),
