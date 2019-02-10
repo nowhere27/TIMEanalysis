@@ -152,7 +152,7 @@ def forNextStep_unit(f):
 
 # Actual multiprocessors
 def processCellData(fList):
-    #clearDir(dataDir_cell)
+    clearDir(dataDir_cell)
 
     try:
         #pool = Pool(processes=1)
@@ -163,7 +163,7 @@ def processCellData(fList):
         pool.join()
 
 def processSPData(fList):
-    #clearDir(dataDir_SP)
+    clearDir(dataDir_SP)
 
     try:
         #pool = Pool(processes=1)
@@ -174,11 +174,11 @@ def processSPData(fList):
         pool.join()
 
 def classifyCell(fList):
-    #clearDir(resDir_cell)
+    clearDir(resDir_cell)
     subprocess.call(['Rscript',projDir.replace('/','\\')+"scripts\\classifyCell.R"])
 
 def classifySP(fList):
-    #clearDir(resDir_SP)
+    clearDir(resDir_SP)
     subprocess.call(['Rscript',projDir.replace('/','\\')+"scripts\\classifySP.R"])
 
 def forNextStep(fList):
