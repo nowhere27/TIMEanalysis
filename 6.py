@@ -116,7 +116,7 @@ for f in fList:
 
     for t in tumorOnly:
         ie_c = np.sum(tileDict_tumor[t][0])
-        tumor_a = np.sum(tileDict_tumor[t][1])/100000
+        tumor_a = np.sum(tileDict_tumor[t][1])/1000000
         ie_d = ie_c/tumor_a
 
         str_count.append(0)
@@ -145,7 +145,7 @@ for f in fList:
 
     for t in strOnly:
         str_c = np.sum(tileDict_stroma[t][0])
-        str_a = np.sum(tileDict_stroma[t][1])/100000
+        str_a = np.sum(tileDict_stroma[t][1])/1000000
         str_d = str_c/str_a
 
         total.append(str_c)
@@ -173,11 +173,11 @@ for f in fList:
 
     for t in common:
         ie_c = np.sum(tileDict_tumor[t][0])
-        tumor_a = np.sum(tileDict_tumor[t][1])/100000
+        tumor_a = np.sum(tileDict_tumor[t][1])/1000000
         ie_d = ie_c/tumor_a
 
         str_c = np.sum(tileDict_stroma[t][0])
-        str_a = np.sum(tileDict_stroma[t][1])/100000
+        str_a = np.sum(tileDict_stroma[t][1])/1000000
         str_d = str_c/str_a
 
         total_c = ie_c+str_c
