@@ -11,11 +11,11 @@ Once you annotate the tumor area manually, it segments the area into 1000 x 1000
 # [Thing to prepare]
 ## 1. Computer (of course)
  This protocol has been tested on the machines with the following specification: 
-Windows 10, AMD Ryzen 7 1700 3.00 GHz (RAM 32GB)
-Windows 7, Intel i7-4790 3.60 GHz (RAM 32GB)
-Ubuntu 14.04 LTS, Intel Xeon 3.40 GHz (RAM 32GB) 
+- Windows 10, AMD Ryzen 7 1700 3.00 GHz (RAM 32GB)
+- Windows 7, Intel i7-4790 3.60 GHz (RAM 32GB)
+- Ubuntu 14.04 LTS, Intel Xeon 3.40 GHz (RAM 32GB) 
 
-To summerize, no supercomputer needed. I have to nothing to say about Mac machines since I have never used them. 
+In one word: no supercomputer needed. I have to nothing to say about Mac machines since I have never used them. 
 
 
 ## 2. Software 
