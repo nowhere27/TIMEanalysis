@@ -31,4 +31,4 @@ To summerize, no supercomputer needed. I have to nothing to say about Mac machin
  For each patient case, a representative tumor block was selected, immunohistochemistry of CD3 and CD8 was performed and the slides were scanned by Aperio AT2 slide scanner at 20x magnification. Why not 40x? just storage issues. I've also tried some images scanned at 40x manification but had no problem. 
  
  
-For a more detailed protocol, please check >> 
+For a more detailed protocol, please check http://dx.doi.org/10.17504/protocols.io.wmefc3e 
