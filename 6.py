@@ -77,17 +77,13 @@ for f in fList:
             tileList.append(items[0])
             if(items[1]=='Tumor'):
                 if(items[0] in tileDict_tumor.keys()):
-                    #tileDict_tumor[items[0]]=[a+b for a, b in zip(tileDict_tumor[items[0]],[float(items[6]),float(items[-4]),float(items[-3])])]
                     tileDict_tumor[items[0]]=[a+b for a, b in zip(tileDict_tumor[items[0]],[[float(items[6])],[float(items[-3])]])]
                 else:
-                    #tileDict_tumor[items[0]]=[float(items[6]),float(items[-4]),float(items[-3])]
                     tileDict_tumor[items[0]]=[[float(items[6])],[float(items[-3])]]
             elif(items[1]=='Stroma'):
                 if(items[0] in tileDict_stroma.keys()):
-                    #tileDict_stroma[items[0]]=[a+b for a, b in zip(tileDict_stroma[items[0]],[float(items[6]),float(items[-4]),float(items[-3])])]
                     tileDict_stroma[items[0]]=[a+b for a, b in zip(tileDict_stroma[items[0]],[[float(items[6])],[float(items[-3])]])]
                 else:
-                    #tileDict_stroma[items[0]]=[float(items[6]),float(items[-4]),float(items[-3])]
                     tileDict_stroma[items[0]]=[[float(items[6])],[float(items[-3])]]
 
     # Record tile-wise info
@@ -125,7 +121,7 @@ for f in fList:
         total.append(ie_c)
 
         # QC criteria: superpixel < 100um2 needs to be discarded
-        if(ie_d<1000):
+        if(ie_d<10000):
             ie_count.append(ie_c)
             ie_density.append(ie_d)
             tumor_area.append(tumor_a)
@@ -152,7 +148,7 @@ for f in fList:
         ie_count.append(0)
         tumor_area.append(0)
 
-        if(str_d<1000):
+        if(str_d<10000):
             str_count.append(str_c)
             str_density.append(str_d)
             str_area.append(str_a)
@@ -183,12 +179,12 @@ for f in fList:
         total_c = ie_c+str_c
         total.append(total_c)
 
-        if(ie_d<1000):
+        if(ie_d<10000):
             ie_count.append(ie_c)
             ie_density.append(ie_d)
             tumor_area.append(tumor_a)
 
-            if(str_d<1000):
+            if(str_d<10000):
                 str_count.append(str_c)
                 str_density.append(str_d)
                 str_area.append(str_a)
@@ -223,7 +219,7 @@ for f in fList:
             ie_count.append(0)
             tumor_area.append(0)
 
-            if(str_d<1000):
+            if(str_d<10000):
                 str_count.append(str_c)
                 str_density.append(str_d)
                 str_area.append(str_a)
@@ -245,13 +241,11 @@ for f in fList:
         strTIL = np.sum(str_count)/np.sum(str_area)
         ie_str = ieTIL/strTIL
         CD3_Dict[caseId] = [ieTIL, strTIL, ie_str, np.mean(ie_density), np.mean(str_density), np.mean(ie_to_str), np.min(ie_density), np.min(str_density), np.min(ie_to_str), np.median(ie_density), np.median(str_density), np.median(ie_to_str),np.max(ie_density), np.max(str_density), np.max(ie_to_str), QD(ie_density), QD(str_density), QD(ie_to_str), CoV(ie_density), CoV(str_density), CoV(ie_to_str), np.sum(str_area)/(np.sum(str_area)+np.sum(tumor_area)), np.mean(stroma_ratio), np.min(stroma_ratio), np.median(stroma_ratio), np.max(stroma_ratio), QD(stroma_ratio), CoV(stroma_ratio)]
-        #CD3_Dict[caseId] = [ieTIL, strTIL, ie_str, np.std(ie_density_rand)/np.mean(ie_density_rand), np.std(str_density_rand)/np.mean(str_density_rand), np.std(ie_to_str)/np.mean(ie_to_str), np.sum(str_area)/(np.sum(str_area)+np.sum(tumor_area)), np.std(str_rand)/np.mean(str_rand)]
     else:
         ieTIL = np.sum(ie_count)/np.sum(tumor_area)
         strTIL = np.sum(str_count)/np.sum(str_area)
         ie_str = ieTIL/strTIL
         CD8_Dict[caseId] = [ieTIL, strTIL, ie_str, np.mean(ie_density), np.mean(str_density), np.mean(ie_to_str), np.min(ie_density), np.min(str_density), np.min(ie_to_str), np.median(ie_density), np.median(str_density), np.median(ie_to_str),np.max(ie_density), np.max(str_density), np.max(ie_to_str), QD(ie_density), QD(str_density), QD(ie_to_str), CoV(ie_density), CoV(str_density), CoV(ie_to_str), np.sum(str_area)/(np.sum(str_area)+np.sum(tumor_area)), np.mean(stroma_ratio), np.min(stroma_ratio), np.median(stroma_ratio), np.max(stroma_ratio), QD(stroma_ratio), CoV(stroma_ratio)]
-        #CD8_Dict[caseId] = [ieTIL, strTIL, ie_str, np.std(ie_density_rand)/np.mean(ie_density_rand), np.std(str_density_rand)/np.mean(str_density_rand), np.std(ie_to_str)/np.mean(ie_to_str), np.sum(str_area)/(np.sum(str_area)+np.sum(tumor_area)), np.std(str_rand)/np.mean(str_rand)]
 
     tileF.close()
 
