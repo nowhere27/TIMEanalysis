@@ -9,7 +9,7 @@ resDir <- paste(super, 'Cell_filtered_data/',sep='')
 
 # Load the model
 start <- Sys.time()
-CD3_model <- readRDS(paste(projName,"Scripts/","classifier_CD3.rds",sep=""))
+#CD3_model <- readRDS(paste(projName,"Scripts/","classifier_CD3.rds",sep=""))
 CD8_model <- readRDS(paste(projName,"Scripts/","classifier_CD8.rds",sep=""))
 
 # Do the classification
@@ -28,7 +28,8 @@ for(i in 1:N) {
 
   if(nrow(nuc)!=0) {
     if(grepl('CD3',fName))
-      prediction <- predict(CD3_model,nuc)
+      #prediction <- predict(CD3_model,nuc)
+      prediction <- rep(as.factor('Positive'),nrow(nuc)) # No filtering for CD3!
     else
       prediction <- predict(CD8_model,nuc)
 
