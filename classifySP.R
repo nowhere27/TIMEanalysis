@@ -14,7 +14,7 @@ model <- readRDS(paste(projName,"Scripts/","classifier.rds",sep=""))
 # Do the classification
 metric <- data.frame(filename=character(),
                      total=integer(), tumor=integer(),
-                     stroma=integer(),LA=integer())
+                     stroma=integer())
 names(metric) <- c('case_name','total', 'tumor','stroma')
 fList <- list.files(cellDir,full.names=FALSE,recursive=FALSE)
 N <- length(fList)
